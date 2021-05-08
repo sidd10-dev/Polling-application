@@ -1,0 +1,23 @@
+{% extends "poll_app/base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="create-container">
+        <h2>Create A New Poll</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="question-container">
+                <p>Question</p>
+                {% render_field form.question class="question" rows="3" %}
+            </div>
+            <div class="options-container">
+                <label for="option1">option1:  </label>
+                {% render_field form.option_one class="option": placeholder="Enter the option": %}
+                <label for="option2">option2:  </label>
+                {% render_field form.option_two class="option": placeholder="Enter the option": %}
+                <label for="option3">option3:  </label>
+                {% render_field form.option_three class="option": placeholder="Enter the option": %}
+            </div>
+            <button type = "submit" class = "create-btn">Create</button>
+        </form>
+    </div>
+{% endblock content %}

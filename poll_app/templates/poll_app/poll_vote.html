@@ -1,0 +1,27 @@
+{% extends "poll_app/base.html" %}
+{% block content %}
+  <div class="vote-container">
+      <h3>CAST YOUR VOTE!</h3>
+      <div class="votes">
+          <h4>{{poll.question}}</h4>
+          <form action="" method="post">
+              {% csrf_token %}
+          <div class="options">
+              <div class="div">
+              <label for="option1">{{poll.option_one}}</label>
+              <input type="radio" name = 'poll' value = '{{poll.option_one}}'>
+              </div>
+              <div>
+              <label for="option2">{{poll.option_two}}</label>
+              <input type="radio" name = 'poll' value = '{{poll.option_two}}'>
+              </div>
+              <div>
+              <label for="option3">{{poll.option_three}}</label>
+              <input type="radio" name = 'poll' value = '{{poll.option_three}}'>
+              </div>
+              <button type = "submit" class = "vote-btn-2">Vote</button>
+          </div>
+        </form>
+      </div>
+  </div>
+{% endblock content %}

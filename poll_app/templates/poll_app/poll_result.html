@@ -1,0 +1,14 @@
+{% extends "poll_app/base.html" %}
+{% block content %}
+<a href = "{% url 'list' %}" class = "return-btn"><i class="fas fa-long-arrow-alt-left"></i>  Return back to home</a>
+  <div class="result-container">
+      <h2>Results for {{poll.question}}</h2>
+      <div class="result-box">
+          <ul>
+              <li>{{poll.option_one}} - {{poll.option_one_count}}</li>
+              <li>{{poll.option_two}} - {{poll.option_two_count}}</li>
+              <li>{{poll.option_three}} - {{poll.option_three_count}}</li>
+          </ul>
+      </div>
+  </div>
+{% endblock content %}
